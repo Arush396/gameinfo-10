@@ -116,7 +116,7 @@ object IconRepo {
     }
 
     // Tried for every game, regardless of platform tags, for the same reason as steam() above.
-    private fun appStore(names: List<String>): List<String>? {
+    private suspend fun appStore(names: List<String>): List<String>? {
         for (n in names) {
             appStoreOne(n)?.let { return it }
             delay(350) // Apple's search endpoint is rate limited
